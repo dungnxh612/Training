@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Digi Dinos28\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Digi Dinos28\\.nuget\\packages"
+    ]
+  }
+}
