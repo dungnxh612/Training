@@ -157,5 +157,59 @@ namespace Day1
 
             return product;
         }
+
+        public double calSalaryByRecursion(double salary, int n)
+        {
+            if(n < 1)
+            {
+                return salary;
+            }
+            salary = salary + salary * 0.1;
+            return calSalaryByRecursion(salary, n - 1);
+        }
+
+        public double calSalary(double salary, int n)
+        {
+            for(int i = 0; i < n; i++)
+            {
+                salary = salary + salary * 0.1;
+            }
+            return salary;
+        }
+
+        public int cal(double money, double rate, int month,  double salary)
+        {
+            double tmp = money + money * rate;
+            if (tmp >= salary * 2)
+            {
+                return month;
+            }
+            money = tmp;
+            return cal(money,rate,month+1,salary);
+        }
+        public int calMonthByRecursion(double money, double rate)
+        {
+            int month = 1;
+            month = cal(money, rate, month, money);
+            return month;
+        }
+
+        public int calMonth(double money, double rate)
+        {
+            int month = 1;
+            double tmp = money;
+            while (true)
+            {
+                tmp = tmp + tmp * rate;
+                if(tmp >= 2 * money)
+                {
+                    return month;
+                }
+                month++;
+
+            }
+        }
+
+
     }
 }

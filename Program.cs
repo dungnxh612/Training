@@ -32,12 +32,14 @@ namespace Day1
             //Search product by name
             Product item = new Product();
             item = search.findProduct(Items, "RAM");
+            Console.WriteLine("Get information product have name is RAM:");
             Console.WriteLine("name: " + item.name + ", price: " + item.price + ", quality: " + item.quality + ", categoryId: " + item.categoryId);
             Console.WriteLine("-----------------------");
 
             //Search list product by categoryId
             List<Product> listProductById = new List<Product>();
             listProductById = search.findProductByCategory(Items, 4);
+            Console.WriteLine("Get list product have categoryId = 4:");
             foreach (Product i in listProductById)
             {
                 Console.WriteLine("name: " + i.name + ", price: " + i.price + ", quality: " + i.quality + ", categoryId: " + i.categoryId);
@@ -47,6 +49,7 @@ namespace Day1
             //Search list product by price
             List<Product> listProductByPrice = new List<Product>();
             listProductByPrice = search.findProductByPrice(Items, 50);
+            Console.WriteLine("Get list product have price <= 50:");
             foreach (Product i in listProductByPrice)
             {
                 Console.WriteLine("name: " + i.name + ", price: " + i.price + ", quality: " + i.quality + ", categoryId: " + i.categoryId);
@@ -56,6 +59,7 @@ namespace Day1
             //Sort list product by Price(use buble sort)
             List<Product> listProductSortByPrice = new List<Product>();
             listProductSortByPrice = search.sortByPrice(Items);
+            Console.WriteLine("Get list product sorted by price:");
             foreach (Product i in listProductSortByPrice)
             {
                 Console.WriteLine("name: " + i.name + ", price: " + i.price + ", quality: " + i.quality + ", categoryId: " + i.categoryId);
@@ -101,8 +105,14 @@ namespace Day1
             Console.WriteLine("name: " + productPriceMax.name + ", price: " + productPriceMax.price + ", quality: " + productPriceMax.quality + ", categoryId: " + productPriceMax.categoryId);
             Console.WriteLine("-----------------------");
 
+            //Get salary
+            Console.WriteLine(search.calSalaryByRecursion(100, 3));
+            Console.WriteLine(search.calSalary(100, 4));
+            Console.WriteLine("-----------------------");
 
-
+            //Get month
+            Console.WriteLine(search.calMonthByRecursion(100, 0.4));
+            Console.WriteLine(search.calMonth(100, 0.4));
 
         }
     }
