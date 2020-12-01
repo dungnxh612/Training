@@ -68,14 +68,14 @@ namespace Day1
         {
             for(int i=1; i< listProduct.Count; i++)
             {
-                string key = listProduct[i].name;
+                Product key = listProduct[i];
                 int j = i - 1;
-                while(j >=0 && String.Compare(listProduct[j].name, key) < 0)
+                while(j >=0 && String.Compare(listProduct[j].name, key.name) < 0)
                 {
-                    listProduct[j + 1].name = listProduct[j].name;
+                    listProduct[j + 1] = listProduct[j];
                     j--;
                 }
-                listProduct[j + 1].name = key;
+                listProduct[j + 1] = key;
 
             }
             return listProduct;
@@ -83,34 +83,34 @@ namespace Day1
 
         public List<Product> sortByCategoryName(List<Product> listProduct, List<Category> listCategory)
         {
-            List<Product> listP = new List<Product>();
+            foreach (Product prod in listProduct)
+            {
+                foreach (Category cate in listCategory)
+                {
+                    if (prod.categoryId == cate.id)
+                    {
+                        prod.categoryName = cate.name;
+                    }
+                }
+            }
 
-            for(int i = 0; i < listCategory.Count - 1; i++)
+
+            for (int i = 0; i < listProduct.Count - 1; i++)
             {
                 int min_Index = i;
-                for(int j = i + 1; j < listCategory.Count; j++)
+                for (int j = i + 1; j < listProduct.Count; j++)
                 {
-                    if(String.Compare(listCategory[j].name, listCategory[min_Index].name) < 0)
+                    if (String.Compare(listProduct[j].name, listProduct[min_Index].name) < 0)
                     {
                         min_Index = j;
                     }
                 }
-                string tmp = listCategory[min_Index].name;
-                listCategory[min_Index].name = listCategory[i].name;
-                listCategory[i].name = tmp;
+                Product tmp = listProduct[min_Index];
+                listProduct[min_Index] = listProduct[i];
+                listProduct[i] = tmp;
             }
 
-            foreach(Category item in listCategory)
-            {
-                foreach(Product i in listProduct)
-                {
-                    if(item.id == i.categoryId)
-                    {
-                        listP.Add(i);
-                    }
-                }
-            }
-            return listP;
+            return listProduct;
         }
 
         public List<Product> mapProductByCategory(List<Product> listProduct, List<Category> listCategory)
@@ -164,8 +164,7 @@ namespace Day1
             {
                 return salary;
             }
-            salary = salary + salary * 0.1;
-            return calSalaryByRecursion(salary, n - 1);
+            return calSalaryByRecursion(salary, n - 1) + calSalaryByRecursion(salary, n - 1)*0.1;
         }
 
         public double calSalary(double salary, int n)
@@ -176,21 +175,26 @@ namespace Day1
             }
             return salary;
         }
-
-        public int cal(double money, double rate, int month,  double salary)
+        
+        public double cal(double money, double rate, int month)
         {
-            double tmp = money + money * rate;
-            if (tmp >= salary * 2)
+            if(month == 0)
             {
-                return month;
+                return money;
             }
-            money = tmp;
-            return cal(money,rate,month+1,salary);
+            return cal(money, rate, month -1) + cal(money, rate, month - 1)*rate;
         }
+
+
         public int calMonthByRecursion(double money, double rate)
         {
             int month = 1;
-            month = cal(money, rate, month, money);
+            while(cal(money, rate, month) < money*2)
+            {
+                cal(money, rate, month);
+                month++;
+            }
+            
             return month;
         }
 

@@ -78,6 +78,7 @@ namespace Day1
             //Sort list product by categoryName(selection sort)
             List<Product> listProductSortCategoryName = new List<Product>();
             listProductSortCategoryName = search.sortByCategoryName(Items, Cate);
+            Console.WriteLine("Sort list product by category name:");
             foreach (Product i in listProductSortCategoryName)
             {
                 Console.WriteLine("name: " + i.name + ", price: " + i.price + ", quality: " + i.quality + ", categoryId: " + i.categoryId);
@@ -107,7 +108,7 @@ namespace Day1
 
             //Get salary
             Console.WriteLine(search.calSalaryByRecursion(100, 3));
-            Console.WriteLine(search.calSalary(100, 4));
+            Console.WriteLine(search.calSalary(100, 3));
             Console.WriteLine("-----------------------");
 
             //Get month

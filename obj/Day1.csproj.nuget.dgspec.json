@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Digi Dinos28\\Desktop\\Training\\Day1\\Day1\\Day1.csproj": {}
+    "C:\\Users\\Admin\\Documents\\GitHub\\Training\\Day1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Digi Dinos28\\Desktop\\Training\\Day1\\Day1\\Day1.csproj": {
+    "C:\\Users\\Admin\\Documents\\GitHub\\Training\\Day1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Digi Dinos28\\Desktop\\Training\\Day1\\Day1\\Day1.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\Training\\Day1.csproj",
         "projectName": "Day1",
-        "projectPath": "C:\\Users\\Digi Dinos28\\Desktop\\Training\\Day1\\Day1\\Day1.csproj",
-        "packagesPath": "C:\\Users\\Digi Dinos28\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Digi Dinos28\\Desktop\\Training\\Day1\\Day1\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\Training\\Day1.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\Training\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Digi Dinos28\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
